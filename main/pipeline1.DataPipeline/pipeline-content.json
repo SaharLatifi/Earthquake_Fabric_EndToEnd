@@ -1,0 +1,42 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Script1",
+        "type": "Script",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "linkedService": {
+          "name": "earthquake_wh",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "rkj7snxuboee3jlafmd3vdymgq-lvu35sdfogbefi376khw72ta5q.datawarehouse.fabric.microsoft.com",
+              "artifactId": "25e64e1b-1e31-4b75-82c1-afbfeabb3671",
+              "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec"
+            }
+          }
+        },
+        "typeProperties": {
+          "scripts": [
+            {
+              "type": "Query",
+              "text": {
+                "value": "select 1",
+                "type": "Expression"
+              }
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        }
+      }
+    ]
+  }
+}
