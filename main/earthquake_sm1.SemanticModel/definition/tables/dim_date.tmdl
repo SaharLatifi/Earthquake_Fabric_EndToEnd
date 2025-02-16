@@ -1,0 +1,204 @@
+table dim_date
+	lineageTag: cadb7f3c-b9e2-401e-8c04-0a1b1eac0058
+	sourceLineageTag: [dbo].[dim_date]
+
+	column DateNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: bcb9953d-9c93-4ecb-bd53-428b9755b90b
+		sourceLineageTag: DateNum
+		summarizeBy: none
+		sourceColumn: DateNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 1202c180-764d-476a-b72e-69d3bf023b74
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 229cb739-dd67-47e5-82db-11fff08ef4f4
+		sourceLineageTag: YearMonthNum
+		summarizeBy: none
+		sourceColumn: YearMonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Calendar_Quarter
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8e1084c3-d729-4948-9313-835336526d8a
+		sourceLineageTag: Calendar_Quarter
+		summarizeBy: none
+		sourceColumn: Calendar_Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d011f8da-ef11-47c9-b9ec-c2cfd6b756e9
+		sourceLineageTag: MonthNum
+		summarizeBy: none
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 157472b6-ff72-43de-bc28-97f5f0213f2f
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthShortName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c4ac6988-fa15-4606-b8f0-fa9851ddbb77
+		sourceLineageTag: MonthShortName
+		summarizeBy: none
+		sourceColumn: MonthShortName
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2a4df76e-9fc3-4b2a-bcec-29e6197638fc
+		sourceLineageTag: WeekNum
+		summarizeBy: none
+		sourceColumn: WeekNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumOfYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 22bab4ef-a96f-4906-a126-1aff5fb19def
+		sourceLineageTag: DayNumOfYear
+		summarizeBy: none
+		sourceColumn: DayNumOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumOfMonth
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: cbe41b43-3c72-4a8b-8b89-40a016a62ba2
+		sourceLineageTag: DayNumOfMonth
+		summarizeBy: none
+		sourceColumn: DayNumOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumOfWeek
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 78f8ef93-6cee-45f6-b1f1-67f51a4df312
+		sourceLineageTag: DayNumOfWeek
+		summarizeBy: none
+		sourceColumn: DayNumOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 55167d01-56ea-4303-bd6d-2a2c25e90608
+		sourceLineageTag: DayName
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayShortName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5fa48364-3f03-4d26-9de7-48e3debee303
+		sourceLineageTag: DayShortName
+		summarizeBy: none
+		sourceColumn: DayShortName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 91ab6abc-c45e-4584-ae64-56c59df4ae7b
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarterNum
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a89d0a47-fafa-4b79-b137-fb09eaf686c3
+		sourceLineageTag: YearQuarterNum
+		summarizeBy: none
+		sourceColumn: YearQuarterNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumOfQuarter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7040b9eb-278c-40dc-b475-ff7abd76b70d
+		sourceLineageTag: DayNumOfQuarter
+		summarizeBy: none
+		sourceColumn: DayNumOfQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column NorthernHemispherSeason
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5548ccd2-ba2e-48bc-a109-b4f9de1d3527
+		sourceLineageTag: NorthernHemispherSeason
+		summarizeBy: none
+		sourceColumn: NorthernHemispherSeason
+
+		annotation SummarizationSetBy = Automatic
+
+	column SouthernHemispherSeason
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 92802543-0c32-4f31-8003-72251743556a
+		sourceLineageTag: SouthernHemispherSeason
+		summarizeBy: none
+		sourceColumn: SouthernHemispherSeason
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

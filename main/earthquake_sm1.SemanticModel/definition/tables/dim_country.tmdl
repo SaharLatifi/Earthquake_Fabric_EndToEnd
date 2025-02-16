@@ -1,0 +1,138 @@
+table dim_country
+	lineageTag: 2c28fc5e-fdd1-44db-89c4-e201ae24f4ac
+	sourceLineageTag: [dbo].[dim_country]
+
+	column country_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 9d050bd9-44f3-42a1-908a-5c81927fe1e1
+		sourceLineageTag: country_id
+		summarizeBy: none
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0034ac98-e4f1-4b1b-8efe-f9e2b7c67588
+		sourceLineageTag: country_name
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e48f2f22-8d83-4c66-a987-3ff161d1c074
+		sourceLineageTag: country_code
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column alpha-3
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5ceb6c1b-cdbc-4b90-b7db-f2d014c97232
+		sourceLineageTag: alpha-3
+		summarizeBy: none
+		sourceColumn: alpha-3
+
+		annotation SummarizationSetBy = Automatic
+
+	column country-code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d192105c-757e-4b26-bfef-c2995becd6ec
+		sourceLineageTag: country-code
+		summarizeBy: none
+		sourceColumn: country-code
+
+		annotation SummarizationSetBy = Automatic
+
+	column iso_3166-2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: afaf86c9-2afb-4cb6-ad2e-41d0b382559e
+		sourceLineageTag: iso_3166-2
+		summarizeBy: none
+		sourceColumn: iso_3166-2
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a0009956-5599-4636-81a1-8d5e8f61876b
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub-region
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5cfafc92-5166-40d5-ac1f-ae436981761f
+		sourceLineageTag: sub-region
+		summarizeBy: none
+		sourceColumn: sub-region
+
+		annotation SummarizationSetBy = Automatic
+
+	column intermediate-region
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5897d268-4a2c-470e-9f7d-23f36cc63ba1
+		sourceLineageTag: intermediate-region
+		summarizeBy: none
+		sourceColumn: intermediate-region
+
+		annotation SummarizationSetBy = Automatic
+
+	column region-code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c066973b-6589-4391-a47d-0f6d5abe3e75
+		sourceLineageTag: region-code
+		summarizeBy: none
+		sourceColumn: region-code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub-region-code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: b17fb7b3-1949-4230-95b4-5974cbeecd96
+		sourceLineageTag: sub-region-code
+		summarizeBy: none
+		sourceColumn: sub-region-code
+
+		annotation SummarizationSetBy = Automatic
+
+	column intermediate-region-code
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d73d89af-63eb-4f64-b7be-f95bbb16086f
+		sourceLineageTag: intermediate-region-code
+		summarizeBy: none
+		sourceColumn: intermediate-region-code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_country = entity
+		mode: directLake
+		source
+			entityName: dim_country
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,138 @@
+table dim_country
+	lineageTag: ade13f2c-4e8f-4682-8f21-0adb16c62c16
+	sourceLineageTag: f0e51dcf-dae5-4a1a-958d-b6c253d3fbaf
+
+	column country_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 71abd09b-bc0c-4a4b-b6d8-351d2bb9b49e
+		sourceLineageTag: 269d9bd6-5220-47ca-b351-ef5c1b1b1d1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = User
+
+	column country_name
+		dataType: string
+		lineageTag: 1b1b302f-5624-4212-bb06-84d01998de6d
+		sourceLineageTag: 11bc42ca-5133-41ab-aef9-a59b0f895b98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = User
+
+	column country_code
+		dataType: string
+		lineageTag: 88817fb5-0f17-4782-9c9e-f608641b25fe
+		sourceLineageTag: b4e305a2-071a-4bf5-bd0f-388af235351c
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: country_code
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = User
+
+	column alpha-3
+		dataType: string
+		lineageTag: b465b761-7d7d-45fd-b2a1-926a4f1c2a1b
+		sourceLineageTag: 0eac752b-1191-4188-bb35-aa8ee6cd5b14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: alpha-3
+
+		annotation SummarizationSetBy = User
+
+	column country-code
+		dataType: int64
+		formatString: 0
+		lineageTag: 616a971c-f607-4432-aa42-ef6681f2b4c4
+		sourceLineageTag: 6b63eb9c-5541-46ec-a9c7-9b2f3d5b161c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country-code
+
+		annotation SummarizationSetBy = User
+
+	column iso_3166-2
+		dataType: string
+		lineageTag: cb56ce0b-b653-4abf-bff2-3f54fd1df920
+		sourceLineageTag: b5730e85-83e4-4684-bb55-a2874de62186
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: iso_3166-2
+
+		annotation SummarizationSetBy = User
+
+	column region
+		dataType: string
+		lineageTag: 927930d5-d4f4-4d41-a350-538aaa394d1e
+		sourceLineageTag: bc62bdb4-ff32-4ee8-8ff4-b2e5b7d5e8b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = User
+
+	column sub-region
+		dataType: string
+		lineageTag: d56cafba-8b3f-4859-bffa-07d284130fdc
+		sourceLineageTag: 1a05a06d-c195-4b03-b3fb-d651a81d2320
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sub-region
+
+		annotation SummarizationSetBy = User
+
+	column intermediate-region
+		dataType: string
+		lineageTag: 665195a6-189f-4adf-921d-39a9e941cea1
+		sourceLineageTag: ea50aa0b-e8a8-4807-a92e-e09b42bdbbe1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: intermediate-region
+
+		annotation SummarizationSetBy = User
+
+	column region-code
+		dataType: int64
+		formatString: 0
+		lineageTag: 845d61c8-c8d5-490e-98eb-cea044142744
+		sourceLineageTag: a522e31d-3ac9-460a-a828-ae2cccdcd1bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: region-code
+
+		annotation SummarizationSetBy = User
+
+	column sub-region-code
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ba24281-8f90-4157-ac11-790da2d24d60
+		sourceLineageTag: 0413a590-2343-4107-a552-24ff402648fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sub-region-code
+
+		annotation SummarizationSetBy = User
+
+	column intermediate-region-code
+		dataType: int64
+		formatString: 0
+		lineageTag: c65ebdb7-184f-4b78-b263-29555813d484
+		sourceLineageTag: fd888a64-7b36-4268-8229-c381202d7396
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: intermediate-region-code
+
+		annotation SummarizationSetBy = User
+
+	partition dim_country = entity
+		mode: directQuery
+		source
+			entityName: dim_country
+			expressionSource: 'DirectQuery to AS - earthquake_core_sm'
+

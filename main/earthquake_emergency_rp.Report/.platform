@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "earthquake_emergency_rp"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "37704974-751c-9265-43fb-0b7e890e0b1a"
+  }
+}

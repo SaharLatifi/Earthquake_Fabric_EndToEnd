@@ -1,0 +1,314 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "69519a39-c704-9ad2-4462-cc7a81408443",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(),-1),'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "end_date": {
+              "value": {
+                "value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze Notebook",
+        "dependsOn": [
+          {
+            "activity": "If Condition1_copy1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "70a1d275-ff05-9b7a-40db-4ae85ac48efa",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(),-1),'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold Notebook",
+        "dependsOn": [
+          {
+            "activity": "Silver Notebook",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "201149c3-f6af-94c5-4304-092091cac742",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(),-1),'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver Notebook",
+        "dependsOn": [
+          {
+            "activity": "Bronze Notebook",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT CASE \r\n         WHEN EXISTS (\r\n             SELECT 1 \r\n             FROM INFORMATION_SCHEMA.TABLES \r\n             WHERE TABLE_SCHEMA = 'dbo' \r\n             AND TABLE_NAME = 'dim_country'\r\n         ) THEN 1 \r\n         ELSE 0 \r\n       END AS Tabtable_exists;",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "earthquake_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "25e64e1b-1e31-4b75-82c1-afbfeabb3671",
+                  "endpoint": "rkj7snxuboee3jlafmd3vdymgq-lvu35sdfogbefi376khw72ta5q.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "check_country_exists",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "sqlReaderQuery": "SELECT CASE \r\n         WHEN EXISTS (\r\n             SELECT 1 \r\n             FROM INFORMATION_SCHEMA.TABLES \r\n             WHERE TABLE_SCHEMA = 'dbo' \r\n             AND TABLE_NAME = 'dim_date'\r\n         ) THEN 1 \r\n         ELSE 0 \r\n       END AS Tabtable_exists;",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "schema": [],
+            "linkedService": {
+              "name": "earthquake_wh",
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "25e64e1b-1e31-4b75-82c1-afbfeabb3671",
+                  "endpoint": "rkj7snxuboee3jlafmd3vdymgq-lvu35sdfogbefi376khw72ta5q.datawarehouse.fabric.microsoft.com",
+                  "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "check_date_exists",
+        "dependsOn": [
+          {
+            "activity": "If Condition1",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "IfCondition",
+        "typeProperties": {
+          "expression": {
+            "value": "@equals(activity('check_country_exists').output.firstRow ,0)",
+            "type": "Expression"
+          },
+          "ifTrueActivities": [],
+          "ifFalseActivities": [
+            {
+              "type": "RefreshDataflow",
+              "typeProperties": {
+                "dataflowId": "ab38bd8f-7eb9-4aa8-ba70-cf8c7e1c49d7",
+                "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec",
+                "notifyOption": "NoNotification"
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "load_country_data",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "If Condition1",
+        "dependsOn": [
+          {
+            "activity": "check_country_exists",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "IfCondition",
+        "typeProperties": {
+          "expression": {
+            "value": "@equals(activity('check_country_exists').output.firstRow ,0)",
+            "type": "Expression"
+          },
+          "ifTrueActivities": [],
+          "ifFalseActivities": [
+            {
+              "type": "RefreshDataflow",
+              "typeProperties": {
+                "dataflowId": "90dbd134-4704-4315-a4df-e9446961f983",
+                "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec",
+                "notifyOption": "NoNotification"
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "load_date_data_df_copy",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "If Condition1_copy1",
+        "dependsOn": [
+          {
+            "activity": "check_date_exists",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[sp_load_data_from_staging]",
+          "storedProcedureParameters": {
+            "earthquake_date ": {
+              "value": {
+                "value": "@formatDateTime(addDays(utcNow(),-1),'yyyy-MM-dd')",
+                "type": "Expression"
+              },
+              "type": "String"
+            }
+          }
+        },
+        "linkedService": {
+          "name": "earthquake_wh",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "25e64e1b-1e31-4b75-82c1-afbfeabb3671",
+              "endpoint": "rkj7snxuboee3jlafmd3vdymgq-lvu35sdfogbefi376khw72ta5q.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "c8be695d-7165-4282-a37f-f28f6fea60ec"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "load_data_from_staging",
+        "dependsOn": [
+          {
+            "activity": "Gold Notebook",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "start_date": {
+        "type": "String"
+      }
+    }
+  }
+}

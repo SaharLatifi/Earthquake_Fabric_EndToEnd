@@ -1,0 +1,19 @@
+model Model
+	culture: en-US
+	collation: Latin1_General_100_BIN2_UTF8
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.140.7525.1 (Main)+f63a344f9e090b82fbceba81dbe5d0be83564d27
+
+annotation PBI_QueryOrder = ["DatabaseQuery"]
+
+ref table earthquake_events_gold
+
+ref cultureInfo en-US
+

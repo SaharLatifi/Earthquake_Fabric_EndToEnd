@@ -1,0 +1,78 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"creationSource\":\"QuickCreate\"}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "4479212f14a8603aab43",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"9ed54501be6c9ff5d46d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":688.8283378746594,\"y\":38.36512261580381,\"z\":2000,\"width\":540.5994550408719,\"height\":74.98637602179836,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"earthquake_events_gold.sig_class\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"sig_class\"},\"Name\":\"earthquake_events_gold.sig_class\",\"NativeReferenceName\":\"sig_class\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"sig_class\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'High'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 74.99,
+          "width": 540.60,
+          "x": 688.83,
+          "y": 38.37,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a7b9e64a44fc609b64a1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":64.52316076294278,\"y\":19.182561307901906,\"z\":1000,\"width\":406.3215258855586,\"height\":111.6076294277929,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"earthquake_events_gold.time\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"time\"},\"Name\":\"earthquake_events_gold.time\",\"NativeReferenceName\":\"Date Range\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"time\"}}}]},\"columnProperties\":{\"earthquake_events_gold.time\":{\"displayName\":\"Date Range\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2024-12-12T00:14:29.530'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2025-01-18T22:57:26.831'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"time\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2024-12-12T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"time\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2025-01-19T00:00:00'\"}}}}}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 111.61,
+          "width": 406.32,
+          "x": 64.52,
+          "y": 19.18,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"b767865f82114f5ef757\",\"layouts\":[{\"id\":0,\"position\":{\"x\":13.451957295373665,\"y\":243.41637010676158,\"z\":3000,\"width\":313.87900355871886,\"height\":66.61921708185054,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"earthquake_events_gold.earquake_id\"},{\"queryRef\":\"Sum(earthquake_events_gold.sig)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earquake_id\"}},\"Function\":2},\"Name\":\"earthquake_events_gold.earquake_id\",\"NativeReferenceName\":\"Total Earthquakes\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"sig\"}},\"Function\":4},\"Name\":\"Sum(earthquake_events_gold.sig)\",\"NativeReferenceName\":\"Max of sig\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earquake_id\"}},\"Function\":2}}}]},\"columnProperties\":{\"earthquake_events_gold.earquake_id\":{\"displayName\":\"Total Earthquakes\"},\"Sum(earthquake_events_gold.sig)\":{\"displayName\":\"Significance Max\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 66.62,
+          "width": 313.88,
+          "x": 13.45,
+          "y": 243.42,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"c0b5a3f37e810bc48089\",\"layouts\":[{\"id\":0,\"position\":{\"x\":804.5551601423488,\"y\":167.18861209964413,\"z\":3001,\"width\":475.30249110320284,\"height\":519.5017793594307}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"earthquake_events_gold.country_code\",\"active\":true}],\"Y\":[{\"queryRef\":\"earthquake_events_gold.Number of Earthquakes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"country_code\"},\"Name\":\"earthquake_events_gold.country_code\",\"NativeReferenceName\":\"country_code\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Number of Earthquakes\"},\"Name\":\"earthquake_events_gold.Number of Earthquakes\",\"NativeReferenceName\":\"Number of Earthquakes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"Number of Earthquakes\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":-0.25}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 519.50,
+          "width": 475.30,
+          "x": 804.56,
+          "y": 167.19,
+          "z": 3001.00
+        },
+        {
+          "config": "{\"name\":\"c11b17a4406846ed3ee1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":13.451957295373665,\"y\":167.18861209964413,\"z\":0,\"width\":740.4982206405693,\"height\":519.5017793594307,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"earthquake_events_gold.country_code\",\"active\":true}],\"Size\":[{\"queryRef\":\"Sum(earthquake_events_gold.sig)\"}],\"Series\":[{\"queryRef\":\"earthquake_events_gold.sig_class\"}],\"Tooltips\":[{\"queryRef\":\"Min(earthquake_events_gold.earquake_id)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"e\",\"Entity\":\"earthquake_events_gold\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"country_code\"},\"Name\":\"earthquake_events_gold.country_code\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"sig\"}},\"Function\":4},\"Name\":\"Sum(earthquake_events_gold.sig)\",\"NativeReferenceName\":\"Maximum Significance\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"sig_class\"},\"Name\":\"earthquake_events_gold.sig_class\",\"NativeReferenceName\":\"Classification\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"earquake_id\"}},\"Function\":3},\"Name\":\"Min(earthquake_events_gold.earquake_id)\",\"NativeReferenceName\":\"Number of Events\"}]},\"columnProperties\":{\"earthquake_events_gold.country_code\":{\"displayName\":\"Country\"},\"Sum(earthquake_events_gold.sig)\":{\"displayName\":\"Maximum Significance\"},\"earthquake_events_gold.sig_class\":{\"displayName\":\"Classification\"},\"Min(earthquake_events_gold.earquake_id)\":{\"displayName\":\"Number of Events\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.5}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"earthquake_events_gold\"}},\"Property\":\"sig_class\"}},\"Right\":{\"Literal\":{\"Value\":\"'High'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0.2}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"earthquake_events_gold\"}},\"Property\":\"sig_class\"}},\"Right\":{\"Literal\":{\"Value\":\"'Low'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"earthquake_events_gold\"}},\"Property\":\"sig_class\"}},\"Right\":{\"Literal\":{\"Value\":\"'Moderate'\"}}}}}]}}],\"mapStyles\":[{\"properties\":{\"mapTheme\":{\"expr\":{\"Literal\":{\"Value\":\"'canvasLight'\"}}}}}],\"bubbles\":[{\"properties\":{\"bubbleSize\":{\"expr\":{\"Literal\":{\"Value\":\"-7L\"}}},\"markerRangeType\":{\"expr\":{\"Literal\":{\"Value\":\"'magnitude'\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Worldwide Events'\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Bubble size is relative to Maximum Significance and Number of Events by Country and Classification'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 519.50,
+          "width": 740.50,
+          "x": 13.45,
+          "y": 167.19,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

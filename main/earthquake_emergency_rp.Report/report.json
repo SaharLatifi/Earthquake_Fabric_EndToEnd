@@ -1,0 +1,181 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2},\"customTheme\":{\"name\":\"Frontier\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          },
+          {
+            "name": "Frontier",
+            "path": "BuiltInThemes/Frontier.json",
+            "type": 201
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "items": [
+          {
+            "name": "eq422852116267073352.jpeg",
+            "path": "eq422852116267073352.jpeg",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"relationships\":[{\"source\":\"4c98ad5f066e01bdd23b\",\"target\":\"405aa2b7e696530b094b\",\"type\":1}]}",
+      "displayName": "metric",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"6cdb7a3cac3acd247298\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_date\"}},\"Property\":\"YearMonthNum\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"YearMonthNum\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"202501L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"979c20cea135b6c080a7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_date\"}},\"Property\":\"MonthName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'January'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "1a8881b7420066e74b31",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0816b5a3125d63d09584\",\"layouts\":[{\"id\":0,\"position\":{\"x\":948.0840190884154,\"y\":466.3465223762822,\"z\":2004,\"width\":281.65483034607144,\"height\":237.02100477210385,\"tabOrder\":2004}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_sig_class.sig_class_desc\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_sig_class\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sig_class_desc\"},\"Name\":\"dim_sig_class.sig_class_desc\",\"NativeReferenceName\":\"Significant\"}]},\"columnProperties\":{\"dim_sig_class.sig_class_desc\":{\"displayName\":\"Significant\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"4ffeedc74903b81c0506\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_sig_class\"}},\"Property\":\"sig_class_desc\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_sig_class\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sig_class_desc\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 237.02,
+          "width": 281.65,
+          "x": 948.08,
+          "y": 466.35,
+          "z": 2004.00
+        },
+        {
+          "config": "{\"name\":\"405aa2b7e696530b094b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.92616211822814,\"y\":460.95845446872363,\"z\":2000,\"width\":918.0755884835412,\"height\":243.2836287473819,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measures._#of Earthquakes\"}],\"Category\":[{\"queryRef\":\"dim_country.country_name\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_country\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"country_name\"},\"Name\":\"dim_country.country_name\",\"NativeReferenceName\":\"country_name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_#of Earthquakes\"},\"Name\":\"_measures._#of Earthquakes\",\"NativeReferenceName\":\"_#of Earthquakes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_#of Earthquakes\"}}}]},\"queryFieldParametersByRole\":{\"Y\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"metric_selector\"}},\"Property\":\"metric_selector\"}}}]},\"columnProperties\":{\"_measures._#of Earthquakes\":{\"displayName\":\"_#of Earthquakes\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average Magnitude by Country'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 243.28,
+          "width": 918.08,
+          "x": 17.93,
+          "y": 460.96,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"4c98ad5f066e01bdd23b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":948.0840190884154,\"y\":167.7616202607748,\"z\":1000,\"width\":281.65483034607144,\"height\":284.7330252132416,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"metric_selector.metric_selector\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"metric_selector\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"metric_selector\"},\"Name\":\"metric_selector.metric_selector\",\"NativeReferenceName\":\"Metric\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"metric_selector\"}}}]},\"columnProperties\":{\"metric_selector.metric_selector\":{\"displayName\":\"Metric\"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"metric_selector\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"metric_selector Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''_measures''[_#of Earthquakes]'\"}}]]}}}]}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"metric_selector\"}},\"Property\":\"metric_selector Fields\"}},\"Right\":{\"Literal\":{\"Value\":\"'''_measures''[_#of Earthquakes]'\"}}}}},\"displayName\":\"_#of Earthquakes\"}]}}",
+          "filters": "[]",
+          "height": 284.73,
+          "width": 281.65,
+          "x": 948.08,
+          "y": 167.76,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"6e2d38fe12d098c409b3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":306.0251961611804,\"y\":47.37628559817437,\"z\":2003,\"width\":802.8359748663603,\"height\":56.339366657288444,\"tabOrder\":2003}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Global Earthquake Activity Overview\",\"textStyle\":{\"fontFamily\":\"Segoe (Bold)\",\"fontSize\":\"20pt\",\"color\":\"#426871\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.34,
+          "width": 802.84,
+          "x": 306.03,
+          "y": 47.38,
+          "z": 2003.00
+        },
+        {
+          "config": "{\"name\":\"a4fb33a332972b988748\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":167.73765982056332,\"z\":0,\"width\":915.5147081809372,\"height\":284.2577135890462,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"_measures._#of Earthquakes\"}],\"Category\":[{\"queryRef\":\"dim_date.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0},{\"Name\":\"_\",\"Entity\":\"_measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"},\"Name\":\"dim_date.Date\",\"NativeReferenceName\":\"Date\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_#of Earthquakes\"},\"Name\":\"_measures._#of Earthquakes\",\"NativeReferenceName\":\"_#of Earthquakes\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date\"}}}]},\"queryFieldParametersByRole\":{\"Y\":[{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"metric_selector\"}},\"Property\":\"metric_selector\"}}}]},\"columnProperties\":{\"_measures._#of Earthquakes\":{\"displayName\":\"_#of Earthquakes\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average Magnitude by Date'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 284.26,
+          "width": 915.51,
+          "x": 20.49,
+          "y": 167.74,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c483b7e700971ec96727\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":71.70464847291257,\"z\":2002,\"width\":1192.0897808621714,\"height\":167.73765982056332,\"tabOrder\":2002}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 167.74,
+          "width": 1192.09,
+          "x": 20.49,
+          "y": 71.70,
+          "z": 2002.00
+        },
+        {
+          "config": "{\"name\":\"c7762094aca54db2ed80\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":0,\"z\":2001,\"width\":270.1728719247241,\"height\":167.73765982056332,\"tabOrder\":2001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"eq422852116267073352.jpeg\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 167.74,
+          "width": 270.17,
+          "x": 20.49,
+          "y": 0.00,
+          "z": 2001.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "kpi",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"6cdb7a3cac3acd247298\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_date\"}},\"Property\":\"YearMonthNum\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"YearMonthNum\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"202501L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"979c20cea135b6c080a7\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_date\"}},\"Property\":\"MonthName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_date\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'January'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "9bc3da939880a36ede48",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"10d97162735071190749\",\"layouts\":[{\"id\":0,\"position\":{\"x\":306.0251961611804,\"y\":47.37628559817437,\"z\":5000,\"width\":802.8359748663603,\"height\":56.339366657288444,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Global Earthquake Activity Overview\",\"textStyle\":{\"fontFamily\":\"Segoe (Bold)\",\"fontSize\":\"20pt\",\"color\":\"#426871\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 56.34,
+          "width": 802.84,
+          "x": 306.03,
+          "y": 47.38,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"3c363430d9b03a820470\",\"layouts\":[{\"id\":0,\"position\":{\"x\":902.710306667917,\"y\":494.24989840257587,\"z\":2000,\"width\":311.1469567663884,\"height\":139.5679764919191,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dimension_selector.dimension_selector\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimension_selector\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dimension_selector\"},\"Name\":\"dimension_selector.dimension_selector\",\"NativeReferenceName\":\"Dimension \"}]},\"columnProperties\":{\"dimension_selector.dimension_selector\":{\"displayName\":\"Dimension \"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dimension_selector\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"dimension_selector Fields\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'''dim_country''[country_name]'\"}}]]}}}]}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimension_selector\"}},\"Property\":\"dimension_selector Fields\"}},\"Right\":{\"Literal\":{\"Value\":\"'''dim_country''[country_name]'\"}}}}},\"displayName\":\"Country\"}]}}",
+          "filters": "[]",
+          "height": 139.57,
+          "width": 311.15,
+          "x": 902.71,
+          "y": 494.25,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a8736220642603761069\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":0,\"z\":3000,\"width\":270.1728719247241,\"height\":167.73765982056332,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"eq422852116267073352.jpeg\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 167.74,
+          "width": 270.17,
+          "x": 20.49,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"bfa743f9831d5b190559\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":71.70464847291257,\"z\":4000,\"width\":1192.0897808621714,\"height\":167.73765982056332,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 167.74,
+          "width": 1192.09,
+          "x": 20.49,
+          "y": 71.70,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"ccb4a9af0ca00deed327\",\"layouts\":[{\"id\":0,\"position\":{\"x\":901.4298665166151,\"y\":239.4423082934759,\"z\":1000,\"width\":311.1469567663884,\"height\":239.4423082934759,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"KPI_selector.KPI_selector\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"KPI_selector\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"KPI_selector\"},\"Name\":\"KPI_selector.KPI_selector\",\"NativeReferenceName\":\"KPI \"}]},\"columnProperties\":{\"KPI_selector.KPI_selector\":{\"displayName\":\"KPI \"}},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 239.44,
+          "width": 311.15,
+          "x": 901.43,
+          "y": 239.44,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"eff4980b20cbaa302c28\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.48704242083216,\"y\":206.15086435962363,\"z\":0,\"width\":870.6993028853668,\"height\":482.7259370408578,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_country.country_name\"},{\"queryRef\":\"_measures._ #of earthquakes in last x days\"},{\"queryRef\":\"_measures._ #of high mag earthquakes\"},{\"queryRef\":\"_measures._ #of high sig earthquakes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measures\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_country\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_ #of high sig earthquakes\"},\"Name\":\"_measures._ #of high sig earthquakes\",\"NativeReferenceName\":\"# of high-sig earthquakes\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_ #of earthquakes in last x days\"},\"Name\":\"_measures._ #of earthquakes in last x days\",\"NativeReferenceName\":\"# of earthquakes in last 7 days\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"_ #of high mag earthquakes\"},\"Name\":\"_measures._ #of high mag earthquakes\",\"NativeReferenceName\":\"# of high-mag earthquakes\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"country_name\"},\"Name\":\"dim_country.country_name\",\"NativeReferenceName\":\"Country\"}]},\"queryFieldParametersByRole\":{\"Values\":[{\"index\":1,\"length\":3,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"KPI_selector\"}},\"Property\":\"KPI_selector\"}}},{\"index\":0,\"length\":1,\"expr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dimension_selector\"}},\"Property\":\"dimension_selector\"}}}]},\"columnProperties\":{\"_measures._ #of high sig earthquakes\":{\"displayName\":\"# of high-sig earthquakes\"},\"_measures._ #of earthquakes in last x days\":{\"displayName\":\"# of earthquakes in last 7 days\"},\"_measures._ #of high mag earthquakes\":{\"displayName\":\"# of high-mag earthquakes\"},\"dim_country.country_name\":{\"displayName\":\"Country\"}},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F9F7F2'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0.4}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"width\":{\"expr\":{\"Literal\":{\"Value\":\"2D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"bef1d8b0402b68b5a118\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_country\"}},\"Property\":\"country_code\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_country\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"country_code\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CA'\"}}],[{\"Literal\":{\"Value\":\"'US'\"}}],[{\"Literal\":{\"Value\":\"'PR'\"}}],[{\"Literal\":{\"Value\":\"'CN'\"}}],[{\"Literal\":{\"Value\":\"'PG'\"}}],[{\"Literal\":{\"Value\":\"'NZ'\"}}],[{\"Literal\":{\"Value\":\"'ID'\"}}],[{\"Literal\":{\"Value\":\"'JP'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 482.73,
+          "width": 870.70,
+          "x": 20.49,
+          "y": 206.15,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Frontier"
+}

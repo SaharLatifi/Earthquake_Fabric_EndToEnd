@@ -1,0 +1,56 @@
+table dim_mag_type
+	lineageTag: 7f4963c4-9dfe-4ed0-a25e-70c4e27d102a
+	sourceLineageTag: [dbo].[dim_mag_type]
+
+	column mag_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 0afe0dc4-b4b1-41b7-b1d4-2f980358f967
+		sourceLineageTag: mag_type_id
+		summarizeBy: sum
+		sourceColumn: mag_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mag_type_desc
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: ed75c966-4949-4dc6-8ced-4f0e9c010c53
+		sourceLineageTag: mag_type_desc
+		summarizeBy: none
+		sourceColumn: mag_type_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d409c2e3-8d66-4b63-b81e-543174a1241f
+		sourceLineageTag: created_at
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cd44d74c-7272-4fc6-8eab-74f26e5a5ed6
+		sourceLineageTag: last_updated_at
+		summarizeBy: none
+		sourceColumn: last_updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_mag_type = entity
+		mode: directLake
+		source
+			entityName: dim_mag_type
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

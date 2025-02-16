@@ -1,0 +1,49 @@
+table KPI_selector
+	lineageTag: 61403cd1-6abd-439c-988d-f98b89dc70f3
+
+	column KPI_selector
+		lineageTag: ad7c31c5-259c-41f7-9e89-13624bfcadbb
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'KPI_selector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'KPI_selector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI_selector Fields'
+		isHidden
+		lineageTag: 206eb161-f59e-41b7-9842-1dc5e545c837
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'KPI_selector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KPI_selector Order'
+		isHidden
+		formatString: 0
+		lineageTag: d2067c3d-d7c2-4a26-b723-c9e75836e6cb
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition KPI_selector = calculated
+		mode: import
+		source =
+				{
+				    ("# of earthquakes in last 7 days", NAMEOF('_measures'[_ #of earthquakes in last x days]), 0),
+				    ("# of high-mag earthquakes", NAMEOF('_measures'[_ #of high mag earthquakes]), 1),
+				    ("# of high-sig earthquakes", NAMEOF('_measures'[_ #of high sig earthquakes]), 2)
+				}
+
+	annotation PBI_Id = 443a69ab092049d49829d4dfae119c82
+

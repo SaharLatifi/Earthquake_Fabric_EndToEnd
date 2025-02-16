@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "902a4880-e28f-8a9c-4c4d-500c7d278d52",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": "2025-01-01",
+              "type": "string"
+            },
+            "end_date": {
+              "value": "2025-01-20",
+              "type": "string"
+            },
+            "place_description": {
+              "value": "Osoyoos",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Earthquake Data by Location",
+        "dependsOn": []
+      }
+    ]
+  }
+}

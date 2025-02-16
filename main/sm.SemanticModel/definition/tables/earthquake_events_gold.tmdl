@@ -1,0 +1,154 @@
+table earthquake_events_gold
+	lineageTag: 7a5d6719-ad7e-483e-9044-74b3017c3f74
+	sourceLineageTag: [dbo].[earthquake_events_gold]
+
+	column earquake_id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6886992a-765f-4465-948e-9dff0295da7c
+		sourceLineageTag: earquake_id
+		summarizeBy: none
+		sourceColumn: earquake_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column long
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e886c966-8099-4cc0-ad19-637db96b4826
+		sourceLineageTag: long
+		summarizeBy: sum
+		sourceColumn: long
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lat
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 37f5e8c6-92c4-4c80-a98e-7332e7db11bf
+		sourceLineageTag: lat
+		summarizeBy: sum
+		sourceColumn: lat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column elevation
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 0afd8ec5-b71e-4971-ba36-fe31693646bd
+		sourceLineageTag: elevation
+		summarizeBy: sum
+		sourceColumn: elevation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column title
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c15f1dae-d7ad-423b-8d59-1fab3b30c4a5
+		sourceLineageTag: title
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column place_description
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fbe0e2be-d90c-41c7-9ace-1702d651d366
+		sourceLineageTag: place_description
+		summarizeBy: none
+		sourceColumn: place_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column sig
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5b05d876-7b67-4e78-b9e5-4d1d2e346ea2
+		sourceLineageTag: sig
+		summarizeBy: sum
+		sourceColumn: sig
+
+		annotation SummarizationSetBy = Automatic
+
+	column mag
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e220524a-1449-497d-98cf-91f1b456333e
+		sourceLineageTag: mag
+		summarizeBy: sum
+		sourceColumn: mag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mag_type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cc32258e-8710-4fa4-b289-efeef5245dd7
+		sourceLineageTag: mag_type
+		summarizeBy: none
+		sourceColumn: mag_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column time
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 00127531-7abc-47da-a496-61f09150fd83
+		sourceLineageTag: time
+		summarizeBy: none
+		sourceColumn: time
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6168e48d-8346-419d-9183-80c3a98b52b0
+		sourceLineageTag: updated
+		summarizeBy: none
+		sourceColumn: updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 07a16f8b-c2aa-4ca4-ae11-ca74c2069ed5
+		sourceLineageTag: country_code
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sig_class
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d953091a-9718-4b54-831f-8f51038d4fa6
+		sourceLineageTag: sig_class
+		summarizeBy: none
+		sourceColumn: sig_class
+
+		annotation SummarizationSetBy = Automatic
+
+	partition earthquake_events_gold = entity
+		mode: directLake
+		source
+			entityName: earthquake_events_gold
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

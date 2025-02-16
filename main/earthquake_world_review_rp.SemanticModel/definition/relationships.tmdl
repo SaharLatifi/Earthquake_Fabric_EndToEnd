@@ -1,0 +1,16 @@
+relationship 2bc8e5b6-f961-4d98-84e2-26b2640ce955
+	fromColumn: fact_earthquake.sig_class_id
+	toColumn: dim_sig_class.sig_class_id
+
+relationship 66aedafa-607a-4512-96ea-8a537d551552
+	fromColumn: fact_earthquake.country_id
+	toColumn: dim_country.country_id
+
+relationship 27ab5cba-3994-415f-b32b-28ff51ce9c90
+	fromColumn: fact_earthquake.earthquake_date
+	toColumn: dim_date.Date
+
+relationship fbeaae20-87b1-4c66-8296-85e199e2588f
+	fromColumn: fact_earthquake.mag_type_id
+	toColumn: dim_mag_type.mag_type_id
+

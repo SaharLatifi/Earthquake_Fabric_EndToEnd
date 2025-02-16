@@ -1,0 +1,138 @@
+table fact_earthquake
+	lineageTag: 458f176d-3bf1-4d01-a2fe-07f8eecb1798
+	sourceLineageTag: c6807c73-8986-471b-9b82-333474215c2a
+
+	column earthquake_id
+		dataType: string
+		lineageTag: 2a500b90-8f9d-49e1-b0ab-cf9bf57fe47a
+		sourceLineageTag: e7d49aa4-eee1-4b67-8182-5070d2277fa2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: earthquake_id
+
+		annotation SummarizationSetBy = User
+
+	column title
+		dataType: string
+		lineageTag: 1dc42586-ceed-43e2-9283-855eca50651b
+		sourceLineageTag: 4937bafa-7757-463e-82dc-bd6e472e95dc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = User
+
+	column place_description
+		dataType: string
+		lineageTag: 9e0765bc-20e1-4785-9497-611e25a2e9a6
+		sourceLineageTag: 2640d923-07ab-4f27-9434-e5e1a4f36b15
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: place_description
+
+		annotation SummarizationSetBy = User
+
+	column sig
+		dataType: int64
+		formatString: 0
+		lineageTag: d0a5fbb1-b391-436f-a601-8e5da4af4182
+		sourceLineageTag: ea1b9bf4-4ddc-4b16-abba-0a568ac0ee86
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: sig
+
+		annotation SummarizationSetBy = User
+
+	column mag
+		dataType: double
+		lineageTag: 7045fff9-e9c0-46d2-93bd-4f42b3caab15
+		sourceLineageTag: 84b78bc5-a207-495a-a330-a219e3588bad
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: mag
+
+		annotation SummarizationSetBy = User
+
+	column mag_type_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 357eaf94-4e81-402d-8d6f-8671e1e1221c
+		sourceLineageTag: e804e70f-d012-4dd6-a5ef-8d60e6ee5174
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: mag_type_id
+
+		annotation SummarizationSetBy = User
+
+	column sig_class_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b45772f-5590-4d2a-9d83-d64180975d2a
+		sourceLineageTag: 536cd5bb-9c30-43e8-a6e9-5b12738f25e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sig_class_id
+
+		annotation SummarizationSetBy = User
+
+	column country_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cd9a35d-c013-4b76-ae67-cb291474326e
+		sourceLineageTag: 6c14168c-c75c-4f47-a3ea-57aefde86dee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = User
+
+	column earthquake_datetime
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 2633d3b2-d50a-427b-b0d5-ba4ec6fb4074
+		sourceLineageTag: 6f960210-d198-4492-a4e6-d38e07e7a6d6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: earthquake_datetime
+
+		annotation SummarizationSetBy = User
+
+	column earthquake_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: de7686d2-bec8-4fcb-baf4-364a63064f4b
+		sourceLineageTag: 18d25459-6bd8-4d5c-8f43-b54c2ec036de
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: earthquake_date
+
+		annotation SummarizationSetBy = User
+
+	column created_at
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 9f1a75da-e6f5-412e-a1d0-ef1118030d34
+		sourceLineageTag: c22824ae-9773-42e0-a857-4db244da2149
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = User
+
+	column last_updated_at
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: e8550745-4cdd-48b4-9ae4-2d5fdcf971e0
+		sourceLineageTag: df485e42-585c-42f3-92aa-8f3f2b660995
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_updated_at
+
+		annotation SummarizationSetBy = User
+
+	partition fact_earthquake = entity
+		mode: directQuery
+		source
+			entityName: fact_earthquake
+			expressionSource: 'DirectQuery to AS - earthquake_core_sm'
+

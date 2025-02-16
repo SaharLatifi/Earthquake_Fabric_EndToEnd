@@ -1,0 +1,146 @@
+table _measures
+	lineageTag: c518103e-8317-4d39-b1d9-cd6a8b0408d4
+	sourceLineageTag: [dbo].[_measures]
+
+	measure '_average magnitude' = AVERAGE(fact_earthquake[mag])
+		displayFolder: metrics
+		lineageTag: c670190c-4c5a-4248-94b8-dde23232bd17
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_most recent earthquake date' = MAX(fact_earthquake[earthquake_date])
+		formatString: General Date
+		displayFolder: metrics
+		lineageTag: ba51bcff-1206-4bf6-b273-3c9c5a4ac8af
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_most recent earthquake location' = MAXX( FILTER(fact_earthquake, fact_earthquake[earthquake_date]=[_most recent earthquake date]), fact_earthquake[place_description])
+		displayFolder: metrics
+		lineageTag: 1ca00fd6-06c4-41e7-907d-a7544006f926
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_#of Earthquakes' = COUNTROWS(fact_earthquake)
+		formatString: 0
+		displayFolder: metrics
+		lineageTag: a77be5d6-24e7-4784-8502-4599e5f71159
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_max magnitude' = MAX(fact_earthquake[mag])
+		displayFolder: metrics
+		lineageTag: af3552ca-993b-4446-a7b9-eb720558bd0f
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_average significance' = AVERAGE(fact_earthquake[sig])
+		displayFolder: metrics
+		lineageTag: 7c315262-e5a8-4427-86c0-ecb9e4a955dd
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_most recent earthquake mag' = MAXX( FILTER(fact_earthquake, fact_earthquake[earthquake_date]=[_most recent earthquake date]), fact_earthquake[mag])
+		displayFolder: metrics
+		lineageTag: 462c5d87-333e-4620-a42c-322b248f5d42
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '_high mag' = 3
+		formatString: 0
+		displayFolder: const
+		lineageTag: 078aeb69-8355-4d57-a7eb-978914ef0a4d
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_ #of high mag earthquakes' = CALCULATE([_#of Earthquakes], FILTER(fact_earthquake,fact_earthquake[mag]>=[_high mag]))
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: 4458afdb-2587-4bb7-b35d-686b51ec41cd
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_ #of high sig earthquakes' = CALCULATE([_#of Earthquakes], FILTER(dim_sig_class, dim_sig_class[sig_class_desc]="High"))
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: f1a1e247-315b-4537-8ca0-8d6ab6cafb2e
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_last  x days' = 7
+		formatString: 0
+		displayFolder: const
+		lineageTag: 61252a66-d245-47ef-8576-920579eefe2a
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_ #of earthquakes in last x days' = CALCULATE([_#of Earthquakes], FILTER(fact_earthquake,fact_earthquake[earthquake_date]> TODAY() - [_last  x days]))
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: 1031bcab-2da8-4fdf-b205-b30532c5b8ed
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure '_high sig number' = 100
+		formatString: 0
+		displayFolder: const
+		lineageTag: 725cc221-5cdb-42a8-877a-1ed256991bac
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	column measure
+		dataType: string
+		sourceProviderType: varchar(500)
+		displayFolder: metrics
+		lineageTag: c3e96717-da39-417d-87e1-5eaaabab1ba9
+		sourceLineageTag: measure
+		summarizeBy: none
+		sourceColumn: measure
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _measures = entity
+		mode: directLake
+		source
+			entityName: _measures
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

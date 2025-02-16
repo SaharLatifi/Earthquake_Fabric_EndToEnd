@@ -1,0 +1,48 @@
+table dimension_selector
+	lineageTag: 4a9c986b-c5bf-470f-8fea-77729ec91f72
+
+	column dimension_selector
+		lineageTag: 623ce24d-93bd-405d-8419-04d532531d8d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'dimension_selector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'dimension_selector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dimension_selector Fields'
+		isHidden
+		lineageTag: 6e8ab1c0-5610-41f3-b09a-674e5bd69fd2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'dimension_selector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'dimension_selector Order'
+		isHidden
+		formatString: 0
+		lineageTag: 63142b6e-7903-4970-a613-d38cdc62679e
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimension_selector = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('dim_country'[country_name]), 0),
+				    ("Date", NAMEOF('dim_date'[Date]), 1)
+				}
+
+	annotation PBI_Id = b3a39aadc12f4ec8ae84b5be6dc904c4
+

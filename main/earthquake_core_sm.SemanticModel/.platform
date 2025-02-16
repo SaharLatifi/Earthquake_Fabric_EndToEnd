@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "earthquake_core_sm"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8212b255-e678-be77-4156-da2a93fb0ee0"
+  }
+}

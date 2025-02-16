@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Worldwide Events(Custom SM)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8069278c-530e-ba0e-4538-ad705af607a7"
+  }
+}

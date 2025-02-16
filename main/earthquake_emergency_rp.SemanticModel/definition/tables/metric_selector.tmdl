@@ -1,0 +1,49 @@
+table metric_selector
+	lineageTag: 3d20fe0d-923a-4b69-95b9-4b50011cfda1
+
+	column metric_selector
+		lineageTag: add2222a-599c-4499-a355-5cd00e049ebb
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'metric_selector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'metric_selector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'metric_selector Fields'
+		isHidden
+		lineageTag: d68bc87c-8580-4fae-9ae1-2ec949202e32
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'metric_selector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'metric_selector Order'
+		isHidden
+		formatString: 0
+		lineageTag: 0e651c4b-5763-4164-ad13-82d09963d5d5
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition metric_selector = calculated
+		mode: import
+		source =
+				{
+				    ("_#of Earthquakes", NAMEOF('_measures'[_#of Earthquakes]), 0),
+				    ("Average Magnitude", NAMEOF('_measures'[_average magnitude]), 1),
+				    ("Average Significance", NAMEOF('_measures'[_average significance]), 2)
+				}
+
+	annotation PBI_Id = c7c1afc03bad47b4be47b9c452175080
+

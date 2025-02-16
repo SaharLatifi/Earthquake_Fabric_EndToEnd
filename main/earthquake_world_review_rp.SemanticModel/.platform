@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "earthquake_world_review_rp"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d355080-0220-aaf0-48dd-0fbeece0bdfd"
+  }
+}

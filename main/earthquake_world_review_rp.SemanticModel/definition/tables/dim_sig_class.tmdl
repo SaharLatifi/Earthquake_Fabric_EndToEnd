@@ -1,0 +1,54 @@
+table dim_sig_class
+	lineageTag: 290cca5b-c538-4d47-9588-3a0260cd0ffb
+	sourceLineageTag: 789a30cc-0ec4-4f3c-8311-b513ca666d3b
+
+	column sig_class_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: d242ef23-2255-445f-b70f-ae0b48e167a0
+		sourceLineageTag: 8b22e9b1-48a4-49b2-8b49-8c0587690612
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sig_class_id
+
+		annotation SummarizationSetBy = User
+
+	column sig_class_desc
+		dataType: string
+		lineageTag: eea78783-d06d-4841-97ec-1488eff8093d
+		sourceLineageTag: 937f2219-d29a-4993-af9f-74fb44a375ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: sig_class_desc
+
+		annotation SummarizationSetBy = User
+
+	column created_at
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 71bb46b7-41be-43b6-ab6a-0a08e5fac467
+		sourceLineageTag: 4661fda8-2b67-4a39-aa02-847ddcd0426c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = User
+
+	column last_updated_at
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 68bcb409-cfff-42e2-8fce-944dc3508009
+		sourceLineageTag: 10423076-a976-403d-bee1-5ef704a92260
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_updated_at
+
+		annotation SummarizationSetBy = User
+
+	partition dim_sig_class = entity
+		mode: directQuery
+		source
+			entityName: dim_sig_class
+			expressionSource: 'DirectQuery to AS - earthquake_core_sm'
+

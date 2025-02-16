@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "3a01be22589e3b374a09",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"a605b1b7520ba4ac1e89\",\"layouts\":[{\"id\":0,\"position\":{\"x\":149.53271028037383,\"y\":271.15264797507785,\"z\":2,\"width\":301.05919003115264,\"height\":75.7632398753894,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_earthquake.most recent earthquake date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_earthquake\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"most recent earthquake date\"},\"Name\":\"fact_earthquake.most recent earthquake date\",\"NativeReferenceName\":\"most recent earthquake date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"most recent earthquake date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 75.76,
+          "width": 301.06,
+          "x": 149.53,
+          "y": 271.15,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"e29c9c2c89ad08200cae\",\"layouts\":[{\"id\":0,\"position\":{\"x\":149.53271028037383,\"y\":117.63239875389408,\"z\":1,\"width\":528.3489096573209,\"height\":131.58878504672896,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"fact_earthquake.most recent earthquake location\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"fact_earthquake\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"most recent earthquake location\"},\"Name\":\"fact_earthquake.most recent earthquake location\",\"NativeReferenceName\":\"most recent earthquake location\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 131.59,
+          "width": 528.35,
+          "x": 149.53,
+          "y": 117.63,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

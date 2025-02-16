@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "earthquake_report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a21fea75-70f3-87eb-42f3-2827e92e3748"
+  }
+}

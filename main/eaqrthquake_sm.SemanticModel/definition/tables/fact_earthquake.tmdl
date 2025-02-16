@@ -1,0 +1,132 @@
+table fact_earthquake
+	lineageTag: ffda1d1c-fcc1-4851-99b1-81e1e44f02d3
+	sourceLineageTag: [dbo].[fact_earthquake]
+
+	column earthquake_id
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 6598337b-0c0f-4a74-9652-4eb4dfdffb11
+		sourceLineageTag: earthquake_id
+		summarizeBy: none
+		sourceColumn: earthquake_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 4f8b7a2e-c392-4262-8fbc-0d34ab4113c2
+		sourceLineageTag: title
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column place_description
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: 848b3f0f-b35f-412b-bf0c-cbc40c78acfc
+		sourceLineageTag: place_description
+		summarizeBy: none
+		sourceColumn: place_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column sig
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 63cf01c8-62d1-41ab-a2bd-5fb52f5083c7
+		sourceLineageTag: sig
+		summarizeBy: sum
+		sourceColumn: sig
+
+		annotation SummarizationSetBy = Automatic
+
+	column mag
+		dataType: double
+		sourceProviderType: float
+		lineageTag: e6bae842-35ff-4fde-b7f4-e8c49f82e660
+		sourceLineageTag: mag
+		summarizeBy: sum
+		sourceColumn: mag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column mag_type_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 2bf681d7-9e66-41e8-9608-6f014dfbb8c1
+		sourceLineageTag: mag_type_id
+		summarizeBy: sum
+		sourceColumn: mag_type_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sig_class_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 94f150cf-5f77-4ec4-914e-0d5fccc8e018
+		sourceLineageTag: sig_class_id
+		summarizeBy: sum
+		sourceColumn: sig_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: ae08cd9d-968c-4475-9efe-e98a9d78def8
+		sourceLineageTag: country_id
+		summarizeBy: sum
+		sourceColumn: country_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column earthquake_datetime
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cb0fb123-f3d7-4b0f-b93e-827e78ec11b6
+		sourceLineageTag: earthquake_datetime
+		summarizeBy: none
+		sourceColumn: earthquake_datetime
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dc719da7-9e6e-4ef4-8344-9fde98c84c6b
+		sourceLineageTag: created_at
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8253f665-ff51-4916-a246-783163206120
+		sourceLineageTag: last_updated_at
+		summarizeBy: none
+		sourceColumn: last_updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_earthquake = entity
+		mode: directLake
+		source
+			entityName: fact_earthquake
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

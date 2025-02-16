@@ -1,0 +1,141 @@
+table _measures
+	lineageTag: 6fc6a620-275f-43fe-b7c1-e81f2ddaa5c9
+	sourceLineageTag: c518103e-8317-4d39-b1d9-cd6a8b0408d4
+
+	measure '_average magnitude' = EXTERNALMEASURE("_average magnitude", DOUBLE, "DirectQuery to AS - earthquake_core_sm")
+		displayFolder: metrics
+		lineageTag: 635e00a4-893c-4b79-b9be-442bdfb38237
+		sourceLineageTag: c670190c-4c5a-4248-94b8-dde23232bd17
+		dataCategory: Uncategorized
+
+	measure '_most recent earthquake date' = EXTERNALMEASURE("_most recent earthquake date", DATETIME, "DirectQuery to AS - earthquake_core_sm")
+		formatString: General Number
+		displayFolder: metrics
+		lineageTag: d3039a8d-92d5-4887-9df4-8753e707e950
+		sourceLineageTag: ba51bcff-1206-4bf6-b273-3c9c5a4ac8af
+		dataCategory: Uncategorized
+
+	measure '_most recent earthquake location' = EXTERNALMEASURE("_most recent earthquake location", STRING, "DirectQuery to AS - earthquake_core_sm")
+		displayFolder: metrics
+		lineageTag: 762f6c39-ebd1-413e-a3d1-d639d07adfc7
+		sourceLineageTag: 1ca00fd6-06c4-41e7-907d-a7544006f926
+		dataCategory: Uncategorized
+
+	measure '_#of Earthquakes' = EXTERNALMEASURE("_#of Earthquakes", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: metrics
+		lineageTag: b6cb6ba9-7248-4f09-8250-0b4b1f298f42
+		sourceLineageTag: a77be5d6-24e7-4784-8502-4599e5f71159
+		dataCategory: Uncategorized
+
+	measure '_max magnitude' = EXTERNALMEASURE("_max magnitude", DOUBLE, "DirectQuery to AS - earthquake_core_sm")
+		displayFolder: metrics
+		lineageTag: 12e41519-bbbf-4795-b7ac-aca20a2fb453
+		sourceLineageTag: af3552ca-993b-4446-a7b9-eb720558bd0f
+		dataCategory: Uncategorized
+
+	measure '_average significance' = EXTERNALMEASURE("_average significance", DOUBLE, "DirectQuery to AS - earthquake_core_sm")
+		displayFolder: metrics
+		lineageTag: 68544ac7-07ef-466a-908b-1a4fa88fcf9f
+		sourceLineageTag: 7c315262-e5a8-4427-86c0-ecb9e4a955dd
+		dataCategory: Uncategorized
+
+	measure '_most recent earthquake mag' = EXTERNALMEASURE("_most recent earthquake mag", DOUBLE, "DirectQuery to AS - earthquake_core_sm")
+		displayFolder: metrics
+		lineageTag: c4781a31-8d21-41f3-99bb-25f3780379c7
+		sourceLineageTag: 462c5d87-333e-4620-a42c-322b248f5d42
+		dataCategory: Uncategorized
+
+	measure '_high mag' = EXTERNALMEASURE("_high mag", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: const
+		lineageTag: 4db9b32f-4879-472c-997b-889c7b93b087
+		sourceLineageTag: 078aeb69-8355-4d57-a7eb-978914ef0a4d
+		dataCategory: Uncategorized
+
+	measure '_ #of high mag earthquakes' = EXTERNALMEASURE("_ #of high mag earthquakes", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: ea277da0-e655-4bb1-a340-13204fc806d0
+		sourceLineageTag: 4458afdb-2587-4bb7-b35d-686b51ec41cd
+		dataCategory: Uncategorized
+
+	measure '_ #of high sig earthquakes' = EXTERNALMEASURE("_ #of high sig earthquakes", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: 4caf4006-7f35-4ca4-9337-ef7461598edc
+		sourceLineageTag: f1a1e247-315b-4537-8ca0-8d6ab6cafb2e
+		dataCategory: Uncategorized
+
+	measure '_last  x days' = EXTERNALMEASURE("_last  x days", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: const
+		lineageTag: befaaec7-a386-4b57-a59b-f26866d238cd
+		sourceLineageTag: 61252a66-d245-47ef-8576-920579eefe2a
+		dataCategory: Uncategorized
+
+	measure '_ #of earthquakes in last x days' = EXTERNALMEASURE("_ #of earthquakes in last x days", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: kpi
+		lineageTag: 88f6a576-5189-4097-983e-968ee6ee543d
+		sourceLineageTag: 1031bcab-2da8-4fdf-b205-b30532c5b8ed
+		dataCategory: Uncategorized
+
+	measure '_high sig number' = EXTERNALMEASURE("_high sig number", INTEGER, "DirectQuery to AS - earthquake_core_sm")
+		formatString: 0
+		displayFolder: const
+		lineageTag: f2be6ec5-27bf-4678-b6dc-ff9386a33b07
+		sourceLineageTag: 725cc221-5cdb-42a8-877a-1ed256991bac
+		dataCategory: Uncategorized
+
+	measure '_most recent earthquake info' = ```
+			
+			VAR _latest_date = [_most recent earthquake date]
+			VAR _latest_location = [_most recent earthquake location]
+			VAR _latest_mag = [_most recent earthquake mag] 
+			
+			RETURN 
+			    "<div style='font-family:sans-serif; position:fixed; bottom:0; width:100%; 
+			        background-color:#f9f9f9; overflow:hidden;'>
+			        <div style='display:inline-block; white-space:nowrap; animation: scroll-text 20s linear infinite;'>
+			            <span style='color:red;'>The most recent earthquake occurred on <b>" & FORMAT(_latest_date, "YYYY-MM-DD") & 
+			            "</b> at <b>" & _latest_location & 
+			            "</b> with a magnitude of <b>" & _latest_mag & 
+			            "</b>.</span>
+			        </div>
+			        <style>
+			            @keyframes scroll-text {
+			                from { transform: translateX(100%); }
+			                to { transform: translateX(-100%); }
+			            }
+			            .scrolling-text {
+			                animation: scroll-text 10s linear infinite;
+			            }
+			        </style>
+			    </div>"
+			
+			```
+		displayFolder: texts
+		lineageTag: b7349c79-83d6-4280-b52c-a1878954b005
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	column measure
+		dataType: string
+		displayFolder: metrics
+		lineageTag: bd2e5e8e-602f-41af-91e5-ea2c8626a42e
+		sourceLineageTag: c3e96717-da39-417d-87e1-5eaaabab1ba9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: measure
+
+		annotation SummarizationSetBy = User
+
+	partition _measures = entity
+		mode: directQuery
+		source
+			entityName: _measures
+			expressionSource: 'DirectQuery to AS - earthquake_core_sm'
+

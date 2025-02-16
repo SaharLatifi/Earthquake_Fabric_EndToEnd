@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - earthquake_core_sm' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/earthquake_data_ws", "earthquake_core_sm"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: a50447bf-ce2c-4f75-989f-b0e972cfeab7
+
+	annotation PBI_IncludeFutureArtifacts = True
+

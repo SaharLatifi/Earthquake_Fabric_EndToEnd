@@ -1,0 +1,56 @@
+table dim_sig_class
+	lineageTag: 789a30cc-0ec4-4f3c-8311-b513ca666d3b
+	sourceLineageTag: [dbo].[dim_sig_class]
+
+	column sig_class_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 8b22e9b1-48a4-49b2-8b49-8c0587690612
+		sourceLineageTag: sig_class_id
+		summarizeBy: none
+		sourceColumn: sig_class_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sig_class_desc
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: 937f2219-d29a-4993-af9f-74fb44a375ad
+		sourceLineageTag: sig_class_desc
+		summarizeBy: none
+		sourceColumn: sig_class_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 4661fda8-2b67-4a39-aa02-847ddcd0426c
+		sourceLineageTag: created_at
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 10423076-a976-403d-bee1-5ef704a92260
+		sourceLineageTag: last_updated_at
+		summarizeBy: none
+		sourceColumn: last_updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_sig_class = entity
+		mode: directLake
+		source
+			entityName: dim_sig_class
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
